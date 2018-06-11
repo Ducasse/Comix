@@ -19,4 +19,13 @@ BDBase >> initialize [
 
 	super initialize.
 	bds := OrderedCollection new. 
+	workingDirectory := FileSystem workingDirectory.
+]
+
+{ #category : #'in/out' }
+BDBase >> save [
+
+	(workingDirectory / (workingDirectory nextNameFor: 'BDs' extension: 'ston')) 
+		asFileReference writeStreamDo: [ :str | str nextPutAll: 
+		(STON toStringPretty: self)]
 ]
