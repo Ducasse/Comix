@@ -7,3 +7,16 @@ Class {
 	],
 	#category : #'Comix-Core'
 }
+
+{ #category : #initialization }
+BDBase >> add: aBD [
+
+	bds add: aBD
+]
+
+{ #category : #initialization }
+BDBase >> initialize [
+
+	super initialize.
+	bds := OrderedCollection new. 
+]
